@@ -28,7 +28,7 @@ You can then start the development server by running this command:
 docker-compose up --build -d
 ```
 
-It will take awhile to run the first time, as it will need to download and setup the docker images, but once run it will be quick to start when used again. Whilst waiting, continue with the next step.
+It will take a while to run the first time, as it will need to download and setup the docker images, but once run it will be quick to start when used again. Whilst waiting, continue with the next step.
 
 Edit your `/etc/hosts` file and add this line:
 
