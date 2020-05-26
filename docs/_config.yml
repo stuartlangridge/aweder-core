@@ -23,7 +23,7 @@ email: hello@jump24.co.uk
 url: https://awe-der.github.io
 description: >- # this means to ignore newlines until "baseurl:"
   Quickly move your business to accepting online orders for pickup or delivery.
-baseurl: "/aweder" # the subpath of your site, e.g. /blog
+baseurl: "/aweder-core" # the subpath of your site, e.g. /blog
 twitter_username: jumptwenty4
 github_username: jumptwenty4
 logo: "/images/aweder-logo.jpg"
