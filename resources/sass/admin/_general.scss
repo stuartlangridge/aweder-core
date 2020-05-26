@@ -1,0 +1,53 @@
+.admin-wrapper {
+  display: grid;
+  height: 100%;
+  padding-right: map_get($siteMargin, 'desktop-xl');
+  grid-template-columns: repeat(12, [col-start] 1fr);
+  grid-template-rows: 80px auto;
+  grid-column-gap: map-get($siteMargin, "desktop-xl");
+  background: linear-gradient(180deg, $white 0%, $white 79px, $riverBed 79px, $riverBed 80px, rgba($silver,.1) 80px, rgba($silver,.1) 100%);
+  
+  @media (max-width: $desktop-max) {
+    padding-right: map_get($siteMargin, 'desktop');
+  }
+  @media (max-width: $tablet-max) {
+    padding: 0 map_get($siteMargin, 'tablet');
+  }
+  @media (max-width: $tablet-sm-max) {
+    grid-template-columns: repeat(6, [col-start] 1fr);
+    padding: 0 map_get($siteMargin, 'tablet-sm');
+  }
+  @media (max-width: $mobile-max) {
+    padding: 0 map_get($siteMargin, 'mobile');
+  }
+}
+
+.admin-main {
+  justify-content: flex-start;
+}
+
+.admin-inner-grid {
+  display: inline-grid;
+  grid-template-columns: repeat(10, [col-start] 1fr);
+  grid-column-gap: map-get($siteMargin, "desktop-xl");
+  align-items: flex-start;
+  width: 100%;
+
+  @media (max-width: $desktop-max) {
+    grid-column-gap: map-get($siteMargin, "desktop");
+  }
+  @media (max-width: $tablet-max) {
+    grid-column-gap: map-get($siteMargin, "tablet");
+  }
+  @media (max-width: $tablet-sm-max) {
+    grid-template-columns: repeat(6, [col-start] 1fr);
+    grid-column-gap: map-get($siteMargin, "tablet-sm");
+  }
+  @media (max-width: $mobile-max) {
+    grid-column-gap: map-get($siteMargin, "mobile");
+  }
+}
+
+.admin-wrapper section {
+  padding: 0;
+}

@@ -1,0 +1,43 @@
+.site-header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80px;
+  z-index: 5;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background:$carnation;
+  color:$white;
+}
+
+.site-logo {
+  align-items: center;
+}
+
+
+.icon--logo-mobile {
+  display: none;
+
+  @media(max-width: $mobile-max) {
+    display: flex;
+  }
+}
+
+
+/* MEDIA QUERIES ============================================================================= */
+
+@media(max-width:$mobile-max) {
+  .site-header__wrapper {
+    align-items: center;
+  }
+  .icon--logo {
+    display: none;
+  }
+  .icon--logo-mobile svg {
+    width: 21px;
+    height: 21px;
+  }
+}

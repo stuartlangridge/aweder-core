@@ -1,0 +1,77 @@
+.admin-header {
+  background: $white;
+  border-bottom: 1px solid $riverBed;
+  height: 80px;
+}
+
+.admin__greeting {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.admin__greeting p {
+  margin-bottom: 0;
+  @include rem2px('font-size', 1.6);
+  line-height: 28px;
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  @media (max-width: $tablet-max) {
+    cursor: pointer;
+  }
+}
+
+.admin__greeting p .icon {
+  margin-left: 10px;
+  display: none;
+
+  @media (max-width: $tablet-max) {
+    display: flex;
+  }
+}
+
+.admin__greeting p svg {
+  width: 10px;
+}
+
+.admin__greeting .avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 40px;
+  overflow: hidden;
+  border: 1px solid rgba($silver, .5);
+  margin-right: 10px;
+}
+
+.admin-mobile-nav {
+  flex-direction: column;
+  position: absolute;
+  right: 0;
+  top: 80px;
+  max-width: 200px;
+  width: 100%;
+  background: $white;
+  border-radius: 0 0 5px 5px;
+  border: 1px solid $silver;
+  border-top: 0;
+  padding: 6px 0;
+  z-index: 2;
+  display: none;
+}
+
+.admin-mobile-nav .admin-mobile__link {
+  padding: 8px 20px;
+  @include rem2px('font-size', 1.6);
+  line-height: 28px;
+  display: flex;
+}
+
+.admin-mobile-nav.admin-menu--open {
+  @media (max-width: $tablet-max) {
+    display: flex;
+  }
+
+}

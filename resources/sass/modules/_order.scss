@@ -1,0 +1,166 @@
+.order {
+  flex-direction: column;
+  background: $white;
+  border-radius: 0 0 5px 5px;
+  position: sticky;
+  top: 60px;
+  box-shadow: -10px 10px 30px 0 rgba($silver,.15);
+  padding: map_get($siteGutter, 'desktop-xl');
+
+  @media (max-width: $tablet-sm-max) {
+    grid-row: 2;
+    margin-bottom: 50px;
+    position: relative;
+    top: 0;
+    border-radius: 5px;
+  }
+}
+
+.order .field--wrapper-radio {
+  margin-top: 10px;
+}
+
+.order__empty p {
+  margin-bottom: 0;
+  color: $silver;
+}
+
+.order__header .header {
+  @include rem2px('font-size', 2.4);
+  line-height: 36px;
+  color: $cloudburst;
+}
+
+.order__menu {
+  display: flex;
+  align-items: center;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid $riverBed;
+}
+
+.order__menu-list {
+  flex-grow: 1;
+  margin-right: 20px;
+}
+
+.order__title,
+.order__price {
+  width: 80%;
+  color: $cloudburst;
+}
+
+.order__title {
+  @extend .font--gibson-med;
+}
+
+.order__note {
+  color: $silver;
+}
+
+.order__total p {
+  color: $cloudburst;
+}
+
+.order__remove {
+  width: 20%;
+}
+
+.form--order-remove {
+  width: auto;
+}
+
+.form--order-remove .field--button {
+  margin-top: 0;
+}
+
+.order__total {
+  margin-top: 20px;
+}
+
+.order__total span,
+.order__note span {
+  @extend .font--gibson-med;
+  @include bodyMedium;
+  margin-right: 10px;
+  color: $silver;
+}
+
+.order__total span {
+  color: $cloudburst;
+}
+
+.menu {
+  padding-top: 100px;
+}
+
+.ordering__status {
+  align-items: center;
+
+  @media (max-width: $tablet-sm-max) {
+    display:none;
+  }
+}
+
+.ordering__status .icon {
+  margin-right: 10px;
+}
+
+.ordering__status .icon--logo-grey svg path:first-child {
+  fill: rgba($silver, 0.4);
+}
+
+.ordering__status .icon--logo-grey svg path:last-child {
+  fill: rgba($silver, 0.6);
+}
+
+.ordering__status .icon--logo svg path:first-child {
+  fill: $carnation;
+}
+
+.ordering__status .icon--logo svg path:last-child {
+  fill: $cloudburst;
+}
+
+.ordering__status p {
+  margin-bottom: 0;
+  @include rem2px('font-size', 1.6);
+  line-height: 30px;
+}
+
+.ordering__status-items {
+  @extend .font--gibson-med;
+}
+
+.intro--order-process p {
+  @include bodyMedium;
+}
+
+.ordering__title {
+  margin-bottom: 20px;
+}
+
+.ordering__merchant {
+  margin-bottom: 10px;
+}
+
+.ordering__address {
+  margin-bottom: 0;
+}
+
+.ordering__address,
+.ordering__tel{
+  @include rem2px('font-size', 1.4);
+  line-height: 28px;
+}
+
+.ordering form {
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.ordering .field--textarea,
+.ordering .payment {
+  width: 100%;
+}
+

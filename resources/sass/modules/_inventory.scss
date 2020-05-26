@@ -1,0 +1,127 @@
+.inventory__item {
+  flex-direction: column;
+  margin-bottom: 40px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgba($cloudburst, 0.2);
+}
+
+.inventory__item .header {
+  color: $cloudburst;
+  margin-bottom: 20px;
+}
+
+.inventory__listing {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.inventory__listing table {
+  @media (max-width: $tablet-sm-max) {
+    background: $white;
+  }
+}
+
+.inventory__listing thead {
+  @media (max-width: $tablet-sm-max) {
+    display: none;
+  }
+}
+
+.inventory__listing tbody {
+  @media (max-width: $tablet-sm-max) {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.inventory__listing tbody tr {
+  @media (max-width: $tablet-sm-max) {
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: 1px solid rgba($cloudburst, 0.4);
+    position: relative;
+  }
+}
+
+.inventory__listing td {
+  @media (max-width: $tablet-sm-max) {
+    border-bottom: 0;
+    @include calc(width, "100% - 80px");
+  }
+}
+
+.inventory__listing .actions {
+  @media (max-width: $tablet-sm-max) {
+    max-width: 80px;
+    width: 100%;
+    height: auto;
+    padding: 0;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+.inventory__listing .actions__wrapper {
+  @media (max-width: $tablet-sm-max) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.inventory__listing .actions__wrapper .button {
+  @media (max-width: $tablet-sm-max) {
+    margin: 0 0 10px 0;
+  }
+}
+
+.inventory__listing .actions__wrapper .icon--add polyline {
+  stroke: $casablanca !important;
+}
+
+.inventory__current {
+  @media (max-width: $tablet-sm-max) {
+    padding: 10px 0;
+  }
+}
+
+.inventory__current td {
+  @media (max-width: $tablet-sm-max) {
+    padding: 10px 20px;
+    height: auto;
+  }
+}
+
+.inventory__current td img {
+   width: 100px;
+   height: 100px;
+}
+
+.inventory__title {
+  @media (max-width: $tablet-sm-max) {
+    @include gibsonMed;
+  }
+}
+
+.choose_file .icon {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $white;
+  border: 1px solid $silver;
+}
+
+.choose_file svg {
+  max-width: 30px;
+  width: 100%;
+}
+
+.inventory__price input {
+  width: auto;
+  display: inline-block;
+}

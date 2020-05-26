@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="453" height="453" viewBox="0 0 453 453">
+  <defs>
+    <mask id="a" x="0" y="226" width="453" height="227" maskUnits="userSpaceOnUse">
+      <g transform="translate(0 0)">
+        <polygon points="0 226 453 226 453 453 0 453 0 226" style="fill: #fff;fill-rule: evenodd"/>
+      </g>
+    </mask>
+    <mask id="b" x="97" y="0" width="260" height="130" maskUnits="userSpaceOnUse">
+      <g transform="translate(0 0)">
+        <polygon points="97 0 357 0 357 130 97 130 97 0" style="fill: #fff;fill-rule: evenodd"/>
+      </g>
+    </mask>
+  </defs>
+  <title>logo-mark</title>
+  <g style="mask: url(#a)">
+    <path d="M0,226C0,351.37,101.41,453,226.5,453S453,351.37,453,226" transform="translate(0 0)" style="fill: #f25851;fill-rule: evenodd"/>
+  </g>
+  <g style="mask: url(#b)">
+    <path d="M97,130a130,130,0,0,1,260,0" transform="translate(0 0)" style="fill: #243752;fill-rule: evenodd"/>
+  </g>
+</svg>

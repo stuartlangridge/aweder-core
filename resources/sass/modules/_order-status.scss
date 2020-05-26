@@ -1,0 +1,25 @@
+.order__status {
+  padding: 5px 20px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @include bodySmall;
+  @extend .font--gibson-med;
+}
+
+.order__status--new {
+  background: $carnation;
+  color: $white;
+  text-transform: uppercase;
+}
+
+.order__status--old {
+  background: $carnation;
+  color: $white;
+  text-transform: uppercase;
+}
+
+.timer {
+  margin-right: 5px;
+}

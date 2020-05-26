@@ -1,0 +1,28 @@
+.notification {
+  position: fixed;
+  top: 100px;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  z-index:99;
+}
+
+.notification__message {
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 15px 20px;
+}
+
+.notification--error .notification__message {
+  background: $carnation;
+}
+
+.notification--success .notification__message {
+  background: $casablanca;
+}
+
+.notification__message p {
+  margin-bottom: 0;
+  color: $white;
+}

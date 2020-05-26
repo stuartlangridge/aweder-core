@@ -1,0 +1,40 @@
+.how-it-works__content {
+  flex-direction:column;
+}
+
+.how-it-works__content .button {
+  align-self: flex-start;
+
+  @include breakpoint($mobile){
+    align-self: center;
+  }
+
+}
+
+.how-it-works__image {
+  grid-row: 1;
+  @media (max-width: $tablet-sm-max) {
+    margin-bottom: 40px;
+  }
+}
+
+.how-it-works__image img {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  align-self: center;
+}
+
+.how-it-works__step {
+  display: flex;
+  flex-direction: column;
+}
+
+.how-it-works__step .button {
+  align-self: flex-start;
+
+  @include breakpoint($mobile){
+    align-self: center;
+  }
+
+}

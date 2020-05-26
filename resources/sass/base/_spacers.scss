@@ -1,0 +1,40 @@
+$siteSpacers: (
+  spacer10: 10px,
+  spacer20: 20px,
+  spacer30: 30px,
+  spacer40: 40px,
+  spacer50: 50px,
+  spacer100: 100px,
+  spacer130: 130px,
+  spacer150: 150px,
+  spacer200: 200px,
+  spacer260: 260px
+);
+
+.spacer-bottom--10 {
+  margin-bottom: map-get($siteSpacers, 'spacer10');
+}
+.spacer-bottom--30 {
+  margin-bottom: map-get($siteSpacers, 'spacer30');
+}
+.spacer-bottom--40 {
+  margin-bottom: map-get($siteSpacers, 'spacer40');
+}
+.spacer-bottom--50 {
+  margin-bottom: map-get($siteSpacers, 'spacer50');
+}
+.spacer-bottom--100 {
+  margin-bottom: map-get($siteSpacers, 'spacer100');
+}
+.spacer-bottom--130 {
+  margin-bottom: map-get($siteSpacers, 'spacer130');
+}
+.spacer-bottom--150 {
+  margin-bottom: map-get($siteSpacers, 'spacer150');
+}
+.spacer-bottom--200 {
+   margin-bottom: map-get($siteSpacers, 'spacer200');
+}
+.spacer-bottom--260 {
+  margin-bottom: map-get($siteSpacers, 'spacer260');
+}

@@ -1,0 +1,33 @@
+parameters:
+  git_dir: .
+  hooks_dir: ./hooks
+  bin_dir: vendor/bin
+  tasks:
+    git_blacklist:
+      keywords:
+        - "die("
+        - "var_dump("
+        - "exit;"
+        - " dd("
+        - " dump("
+      whitelist_patterns:
+        - 'vendor/*'
+    phpcs:
+      standard: ./phpcs.xml
+      ignore_patterns: ['*\.blade\.php', 'database/*', 'tests/*', 'vendor/*', '_ide_helper.php', '.phpstorm.meta.php']
+    phplint:
+      jobs: ~
+      ignore_patterns: ['vendor', '_ide_helper.php', '.phpstorm.meta.php']
+    phpstan:
+      memory_limit: "-1"
+      configuration: ./phpstand.neon
+    phpversion:
+      project: '7.4'
+    git_commit_message:
+      allow_empty_message: false
+      max_body_width: 400
+      max_subject_width: 300
+      enforce_no_subject_trailing_period: false
+      matchers: [/^(NEW:|UPDATE:|REMOVE:|FIX:|Merge).+/]
+    git_branch_name:
+      whitelist: [/^(feature\/|bugfix\/|hotfix\/|release\/).+/]

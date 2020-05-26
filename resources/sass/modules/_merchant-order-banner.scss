@@ -1,0 +1,42 @@
+.merchant-order-banner {
+  color: $white;
+}
+
+.merchant-order-banner__header {
+  position: relative;
+}
+
+.merchant-order-banner__header .order__status {
+  position: absolute;
+  top: -50px;
+  left: 0;
+}
+
+.merchant-order-banner__header .header {
+  display: flex;
+  flex-direction: column;
+}
+
+.merchant-order-banner__header .header span {
+  @include headerFive;
+  text-transform: uppercase;
+  margin-top: 10px;
+}
+
+.merchant-order-banner__merchant .header:after,
+.merchant-order-banner__header span:after {
+  display: none !important;
+}
+
+.merchant-order-banner__merchant,
+.merchant-order-banner__header {
+  flex-direction: column;
+}
+
+.merchant-order-banner__merchant .header {
+  margin-bottom: 20px;
+}
+
+.merchant-order-banner__merchant p {
+  @include bodyMedium;
+}

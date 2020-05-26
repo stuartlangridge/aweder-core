@@ -1,0 +1,50 @@
+.dashboard__outstanding-order {
+  background: $white;
+  flex-direction: column;
+  border-radius: 10px;
+  padding: map_get($siteGutter, 'desktop-xl');
+  margin-bottom: map-get($siteMargin, "desktop-xl");
+
+  @include breakpoint($desktop) {
+    margin-bottom: map-get($siteMargin, "desktop");
+  }
+  @include breakpoint($tablet) {
+    margin-bottom: map-get($siteMargin, "tablet");
+  }
+  @include breakpoint($tablet-small) {
+    margin-bottom: map-get($siteMargin, "tablet-sm");
+  }
+  @include breakpoint($mobile) {
+    margin-bottom: map-get($siteMargin, "mobile");
+  }
+}
+.dashboard__outstanding-order h2 {
+  @include rem2px('font-size', 2.4);
+  line-height: 34px;
+}
+
+.dashboard__outstanding-order .price {
+  font-weight: bold;
+}
+
+.dashboard__outstanding-order h4 {
+  margin-bottom: 20px;
+}
+
+.dashboard__stat {
+  flex-direction: column;
+  align-items:center;
+  text-align: center;
+}
+
+.dashboard__stat h3 {
+  display:inline-flex;
+  @include rem2px('font-size', 1.8);
+  line-height: 24px;
+}
+.dashboard__stat p {
+  @include rem2px('font-size', 2.8);
+  font-weight: bold;
+}
+
+

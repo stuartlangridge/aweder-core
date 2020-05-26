@@ -1,0 +1,61 @@
+image: php:7.4-fpm
+
+pipelines:
+    pull-requests:
+        '**':
+            - step:
+                  name: Build & Test
+                  caches:
+                      - composer
+                  script:
+                      - apt-get update && apt-get install -qy git libonig-dev libxml2-dev libzip-dev unzip zip libpng-dev libmagickwand-dev libjpeg-dev
+                      - docker-php-ext-install bcmath ctype json mbstring pdo_mysql tokenizer xml zip gd
+                      - curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+                      - ln -f -s .env.pipelines .env
+                      - rm .env.testing
+                      - ln -f -s .env.pipelines .env.testing
+                      - composer app-install
+                      - pipe: snyk/snyk-scan:0.3.6
+                        variables:
+                          SNYK_TOKEN: $SNYK_TOKEN
+                          LANGUAGE: "composer"
+                          CODE_INSIGHTS_RESULTS: "true"
+                          DONT_BREAK_BUILD: "true"
+                          MONITOR: "true"
+                          ORGANIZATION: $ORGANIZATION_ID
+                      - composer run lint
+                      - composer run phpcs
+                      - php artisan serve &
+                      - sleep 5
+                      - ./vendor/bin/phpunit --testdox
+                  services:
+                      - mysql
+        release/*:
+            - step:
+                  name: Build & Test
+                  caches:
+                      - composer
+                  script:
+                      - apt-get update && apt-get install -qy git libonig-dev libxml2-dev libzip-dev unzip zip libpng-dev libmagickwand-dev libjpeg-dev
+                      - docker-php-ext-install bcmath ctype json mbstring pdo_mysql tokenizer xml zip gd
+                      - curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+                      - ln -f -s .env.pipelines .env
+                      - rm .env.testing
+                      - ln -f -s .env.pipelines .env.testing
+                      - composer app-install
+                      - composer run lint
+                      - composer run phpcs
+                      - php artisan serve &
+                      - sleep 5
+                      - ./vendor/bin/phpunit --testdox
+                  services:
+                      - mysql
+definitions:
+    services:
+        mysql:
+            image: mysql:5.7
+            environment:
+                MYSQL_DATABASE: 'pipelines'
+                MYSQL_RANDOM_ROOT_PASSWORD: 'yes'
+                MYSQL_USER: 'test_user'
+                MYSQL_PASSWORD: 'test_user_password'

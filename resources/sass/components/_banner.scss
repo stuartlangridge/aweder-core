@@ -1,0 +1,36 @@
+.banner {
+  background: rgba($ecruwhite, 0.3);
+}
+
+.banner .banner__header {
+  margin-bottom:50px;
+}
+.banner .banner__copy {
+  flex-direction: column;
+}
+
+.banner .banner__copy p {
+  @include bodyLarge;
+  @include gibsonReg;
+  color:$carnation;
+  margin-bottom: 0;
+}
+
+.banner .banner__svg {
+  grid-row: 1/span 2;
+  align-items: center;
+
+  @include breakpoint($tablet){
+    grid-row: 3/span 1;
+  }
+  @include breakpoint($tablet-small){
+    grid-row: 3/span 1;
+  }
+  @include breakpoint($mobile){
+    grid-row: 3/span 1;
+  }
+}
+
+.banner .banner__svg svg {
+  width:100%;
+}

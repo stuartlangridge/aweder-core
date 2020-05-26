@@ -1,0 +1,42 @@
+.here-to-help {
+  padding-top:0;
+}
+.here-to-help__content {
+  flex-direction:column;
+}
+.here-to-help ul li {
+  @include rem2px('font-size', 1.4);
+}
+.here-to-help ul li strong {
+  display: block;
+  @include rem2px('font-size', 2.0);
+}
+.here-to-help__content .button {
+  @include breakpoint($mobile){
+    align-self: center;
+  }
+}
+
+.here-to-help__image {
+  grid-row: 1;
+  @media (max-width: $tablet-sm-max) {
+    grid-row: 1;
+    margin-bottom: 40px;
+  }
+}
+
+.here-to-help__image img {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  align-self: center;
+}
+
+.here-to-help__content .button {
+  align-self: flex-start;
+
+  @include breakpoint($mobile){
+    align-self: center;
+  }
+
+}

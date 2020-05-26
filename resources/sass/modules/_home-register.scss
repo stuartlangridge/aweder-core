@@ -1,0 +1,22 @@
+.home-register__copy ul {
+  margin-left: 30px;
+}
+
+.home-register__copy ul {
+  margin-bottom: 30px;
+}
+
+.home-register__copy li {
+  margin-bottom: 10px;
+  @include keplerMed;
+  @include bodyMedium;
+  list-style: disc;
+}
+
+.home-register__copy li:last-child {
+  margin-bottom: 0;
+}
+
+.home-register__form {
+  flex-direction: column;
+}

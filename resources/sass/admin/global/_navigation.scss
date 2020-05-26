@@ -1,0 +1,57 @@
+.admin-nav {
+  grid-row: 1/span 2;
+  background: $carnation;
+  display: inline-flex;
+  flex-direction: column;
+  padding-left: map_get($siteMargin, 'desktop-xl');
+  padding-bottom: map_get($siteMargin, 'desktop-xl');
+
+  @media (max-width: $tablet-max) {
+    display: none;
+  }
+}
+
+.admin-branding {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 80px;
+}
+
+.admin-menu__item {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.admin-menu__link {
+  color: $ecruwhite;
+  @include rem2px('font-size', 1.6);
+  line-height: 28px;
+  padding: 10px 10px 10px 0;
+  width: 100%;
+  transition: color 0.3s ease-in-out;
+  position: relative;
+  z-index: 1;
+}
+
+.admin-menu__link:hover {
+  color: $carnation;
+}
+
+.admin-menu__item:before {
+  content: '';
+  background: rgba($ecruwhite, 0);
+  border-radius: 5px 0 0 5px;
+  display: flex;
+  position: absolute;
+  top: 0;
+  right: 0;
+  @include calc(width, "100% + 20px");
+  height: 100%;
+  transition: background 0.3s ease-in-out;
+}
+
+.admin-menu__item:hover:before {
+  background: rgba($ecruwhite, 1);
+}

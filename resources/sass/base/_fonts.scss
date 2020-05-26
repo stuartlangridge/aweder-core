@@ -1,0 +1,17 @@
+/* SET BASE FONTS ============================================================================= */
+
+.font--gibson-semi {
+  @include gibsonSemi;
+}
+
+.font--gibson-reg {
+  @include gibsonReg;
+}
+
+.font--gibson-med {
+  @include gibsonMed;
+}
+
+.font--gibson-book {
+  @include gibsonBook;
+}

@@ -1,0 +1,110 @@
+.merchant-order__order {
+  flex-direction: column;
+}
+
+.merchant-order__list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  margin-bottom: 40px;
+}
+
+.merchant-order__list dt,
+.merchant-order__list dd {
+  display: flex;
+  width: 50%;
+  border-bottom: 1px dashed rgba($cloudburst, 0.5);
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  color: $cloudburst;
+  @include bodyMedium;
+}
+
+.merchant-order__list dd {
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.merchant-order__list dt {
+  @include bodyMedium;
+}
+
+dt.merchant-order__total,
+.merchant-order__total-price {
+  @include bodyIntro;
+  @extend .font--gibson-semi;
+}
+
+.merchant-order__delivery p {
+  @include bodyLarge;
+  @extend .font--gibson-med;
+  margin-bottom: 15px;
+}
+
+.merchant-order__delivery li {
+  @include bodyMedium;
+  margin-bottom: 5px;
+}
+
+.merchant-order__acceptance {
+  flex-direction: column;
+
+  @media (max-width: $tablet-sm-max) {
+    margin-top: 40px;
+  }
+}
+
+.merchant-order__acceptance .label {
+  @include rem2px('font-size', 1.4);
+  line-height: 26px;
+}
+
+.merchant-order__acceptance .field {
+  flex-direction: row;
+  align-items: center;
+
+  @media (max-width: 480px) {
+    flex-direction:column;
+    align-items: flex-start;
+    justify-content: center;
+  }
+}
+
+.merchant-order__acceptance .field p {
+  margin-left: auto;
+  margin-bottom: 0;
+  @extend .font--gibson-med;
+
+  @media (max-width: 480px) {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+}
+
+.merchant-order__acceptance .select-wrapper .field {
+  margin: 0 10px;
+  flex-shrink: 0;
+}
+
+.merchant-order__acceptance .select-wrapper .select,
+.merchant-order__acceptance .field p {
+  @include rem2px('font-size', 1.8);
+  line-height: 32px;
+  @extend .font--gibson-med;
+}
+
+.merchant-order__notes span {
+  @include bodyMedium;
+}
+
+.merchant-order__acceptance .field--textarea {
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+.merchant-order__acceptance .form--accept {
+  border-bottom: 1px solid rgba($silver, 0.2);
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+}

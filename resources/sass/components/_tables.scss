@@ -1,0 +1,64 @@
+table {
+  border: 1px solid rgba($cloudburst, 0.2);
+  border-bottom: 0;
+}
+
+table th {
+  border-bottom: 1px solid rgba($cloudburst, 0.2);
+  text-align: left;
+  background: $cloudburst;
+  color: $white;
+}
+
+table td,
+table th {
+  padding: 20px;
+  vertical-align: middle;
+}
+
+table td {
+  border-bottom: 1px solid rgba($cloudburst, 0.2);
+  @include rem2px('font-size', 1.6);
+  line-height: 28px;
+  height: 70px;
+  color: rgba($cloudburst, 0.6);
+}
+
+table tr:nth-child(odd) td{
+  background: $white;
+}
+
+table tr:nth-child(even) td{
+  background: rgba($white, 0.4);
+}
+
+table td input[type='text'],
+table td textarea {
+  padding: 0 0 5px 0;
+  border: 0;
+  border-radius: 0;
+  border-bottom: 1px solid rgba($cloudburst, 0.6);
+  @include rem2px('font-size', 1.4);
+  line-height: 20px;
+  @extend .font--gibson-med;
+}
+
+table td .field {
+  margin-bottom: 0;
+}
+
+.actions {
+  width: 200px;
+}
+
+.actions .button {
+  margin-right: 20px;
+}
+
+.actions .button:last-child {
+  margin-right: 0;
+}
+
+.actions__wrapper {
+  display: flex;
+}

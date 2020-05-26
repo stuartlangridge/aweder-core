@@ -1,0 +1,71 @@
+.ordering .row--menu {
+  background: $white;
+  border-top: 1px solid $silver;
+  border-bottom: 1px solid $silver;
+  height: 60px;
+  position: sticky;
+  top: -1px;
+  z-index: 99;
+}
+
+.menu__navigation {
+  display: inline-grid;
+  grid-template-columns: repeat(12, [col-start] 1fr);
+  grid-column-gap: map-get($siteMargin, "desktop-xl");
+  height: 100%;
+
+  @include breakpoint($desktop) {
+    grid-column-gap: map-get($siteMargin, "desktop");
+  }
+  @include breakpoint($tablet) {
+    grid-column-gap: map-get($siteMargin, "tablet");
+  }
+  @include breakpoint($tablet-small) {
+    grid-template-columns: repeat(6, [col-start] 1fr);
+    grid-column-gap: map-get($siteMargin, "tablet-sm");
+  }
+  @include breakpoint($mobile) {
+    grid-template-columns: repeat(6, [col-start] 1fr);
+    grid-column-gap: map-get($siteMargin, "mobile");
+  }
+}
+
+.menu__navigation ul {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.ordering .menu__navigation ul {
+  display: flex;
+  align-items: center;
+  overflow-x: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: auto;
+}
+
+.ordering .menu__navigation ul::-webkit-scrollbar,
+.ordering .menu__navigation ul::-webkit-scrollbar{
+  width: 0 !important;
+  display: none;
+}
+
+.ordering .menu__navigation li {
+  margin-right: 50px;
+  flex-shrink: 0;
+}
+
+.ordering .menu__navigation li:last-child {
+  margin-right: 0;
+}
+
+.ordering .menu__navigation a {
+  @include rem2px('font-size', 1.4);
+  line-height: 26px;
+}
+
+
+.order-confirmation {
+  flex-direction: column;
+}

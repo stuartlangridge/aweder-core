@@ -1,0 +1,68 @@
+.ordering .select-wrapper {
+    margin-left:0;
+}
+
+.ordering .select-wrapper select {
+  @include bodyMedium;
+  @extend .font--gibson-med;
+}
+
+.ordering .select-wrapper .field--select:first-child {
+  margin-left: 0;
+}
+
+.js .ordering .delivery--wrapper,
+.js .order__total-delivery {
+  height:0;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+  margin-bottom:0;
+  display:none;
+}
+
+.js .ordering .delivery--wrapper.show,
+.js .order__total-delivery.show {
+  display:flex;
+  height:auto;
+}
+
+.js .ordering .delivery--wrapper p {
+  @include bodySmall;
+}
+
+.js .order__total-no-delivery {
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+  display:block;
+  height:auto;
+}
+.js .order__total-no-delivery.hide {
+  height:0;
+  display:none;
+}
+.js .order__total-with-delivery {
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+  display:none;
+  height:0;
+  margin-bottom:0;
+}
+.js .order__total-with-delivery.show {
+  display:block;
+  height:auto;
+}
+
+.ordering__type {
+  background: $cloudburst;
+  color: $ecruwhite;
+  @include rem2px('font-size', 1.6);
+  line-height: 30px;
+  border-radius: 4px;
+  padding: 5px 10px;
+}
+
+.ordering__type span {
+  @extend .font--gibson-semi;
+}
+
+.ordering__step {
+  @include rem2px('font-size', 1.6);
+  line-height: 30px;
+}

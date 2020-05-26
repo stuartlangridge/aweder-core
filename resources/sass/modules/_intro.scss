@@ -1,0 +1,12 @@
+.intro__copy {
+  flex-direction: column;
+}
+
+.intro__copy p {
+  @include bodyLarge;
+  @include keplerSemiBold;
+}
+
+.intro__copy p:last-child {
+  margin-bottom: 0;
+}

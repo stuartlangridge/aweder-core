@@ -1,0 +1,19 @@
+.how-it-works__copy,
+.how-it-works__form {
+  flex-direction: column;
+}
+
+.how-it-works__form {
+  @media (max-width: $tablet-sm-max) {
+    margin-top: 30px;
+  }
+}
+
+.how-it-works__step ol li {
+  list-style: decimal-leading-zero;
+}
+
+.how-it-works__step ul li {
+  list-style: disc;
+}
+

@@ -1,0 +1,35 @@
+/* SET BASE COLOURS ============================================================================= */
+$white:#FFFFFF;
+$black: #000000;
+
+//Brand Colours
+$carnation:#F25851;
+$ecruwhite:#F2EDDC;
+$casablanca:#F5B24D;
+$cloudburst: #243752;
+$silver:#C7C7C7;
+$riverBed:#D8D8D8;
+$error: #E32431;
+/* SET REUSABLE FONT CLASS COLOURS ============================================================================= */
+
+.color--carnation {
+   color: $carnation;
+ }
+
+.color--ecru-white {
+  color: $ecruwhite;
+}
+
+.color--casablanca {
+  color: $casablanca;
+}
+
+.color--cloudburst {
+  color: $cloudburst;
+}
+
+.color--silver {
+  color: $silver;
+}
+
+

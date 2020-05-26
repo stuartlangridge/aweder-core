@@ -1,0 +1,75 @@
+/* HIGHLIGHTING ============================================================================= */
+
+::-moz-selection {
+  color: $riverBed;
+  background:$casablanca;
+}
+
+::selection {
+  color: $riverBed;
+  background:$casablanca;
+}
+
+/* FONT ELEMENT STYLES ============================================================================= */
+
+a,
+a:hover {
+  cursor: pointer;
+}
+
+p a,
+p span {
+  color: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+p {
+  margin-bottom: 20px;
+  @include bodyMedium;
+  color:$cloudburst;
+}
+
+p a {
+  font-size: inherit;
+  text-decoration: underline;
+}
+
+li {
+  list-style: none;
+  color:$cloudburst;
+}
+
+/* ICONS ============================================================================= */
+
+.icon {
+  display: flex;
+}
+
+/* HEADER FONT============================================================================= */
+
+.header {
+  @extend .font--gibson-semi;
+}
+
+.header--one {
+  @include headerOne();
+}
+
+.header--two {
+  @include headerTwo();
+}
+
+.header--three {
+  @include headerThree();
+}
+
+.header--four {
+  @include headerFour();
+}
+
+.header--five {
+  @include headerFive();
+}

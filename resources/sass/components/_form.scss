@@ -1,0 +1,392 @@
+::-webkit-input-placeholder {
+  color: $cloudburst;
+}
+
+::-moz-placeholder { /* Firefox 18- */
+  color: $cloudburst;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+  color: $cloudburst;
+}
+
+
+:-ms-input-placeholder {
+  color: $cloudburst;
+}
+
+form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.form--background {
+  background: $white;
+  border-radius: 10px;
+  padding: map_get($siteGutter, 'desktop-xl');
+}
+
+.form--inline {
+  display: inline-grid;
+  grid-template-columns: repeat(10, [col-start] 1fr);
+  grid-column-gap: map-get($siteMargin, "desktop-xl");
+}
+
+.form--delivery {
+  flex-direction: column;
+}
+
+.form--sections {
+  width: 100%;
+  display: inline-grid;
+  grid-template-columns: repeat(12, [col-start] 1fr);
+  grid-column-gap: map-get($siteMargin, "desktop-xl");
+
+  @include breakpoint($desktop) {
+    grid-column-gap: map-get($siteMargin, "desktop");
+  }
+  @include breakpoint($tablet) {
+    grid-column-gap: map-get($siteMargin, "tablet");
+  }
+  @include breakpoint($tablet-small) {
+    grid-template-columns: repeat(6, [col-start] 1fr);
+    grid-column-gap: map-get($siteMargin, "tablet-sm");
+  }
+  @include breakpoint($mobile) {
+    grid-template-columns: repeat(6, [col-start] 1fr);
+    grid-column-gap: map-get($siteMargin, "mobile");
+  }
+}
+
+.register__form {
+  flex-direction: column;
+}
+
+input[type='text'],
+input[type='email'],
+input[type='tel'],
+input[type='password'],
+input[type="date"],
+input[type="search"],
+input[type="file"],
+textarea,
+select {
+  -webkit-appearance: none;
+  -moz-appearance:none;
+  border-bottom:1px solid rgba($cloudburst, 1);
+  width: 100%;
+  display:flex;
+  flex-direction:column;
+  @include rem2px('font-size', 2.0);
+  line-height: 34px;
+  padding: 10px 20px 10px 0 ;
+  color:$cloudburst;
+  @extend .font--gibson-reg;
+}
+
+input[type='text']:focus,
+input[type='email']:focus,
+input[type='tel']:focus,
+input[type='password']:focus,
+input[type="date"]:focus,
+input[type="search"]:focus,
+input[type="file"]:focus,
+textarea:focus,
+select:focus {
+  border-color: $cloudburst;
+}
+input[type="file"] {
+  cursor: pointer;
+}
+
+.field--icon input,
+.field--icon select {
+  padding-right: 40px;
+}
+
+/* SET FIELD STYLES ============================================================================= */
+
+.field{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.field--wrapper .field {
+  margin-bottom: 0;
+}
+
+.field--wrapper-radio {
+  flex-direction: row;
+}
+
+.field--wrapper-radio .field--radio {
+  margin-right:20px;
+}
+
+.field--button{
+  margin-bottom: 0;
+  margin-top: 20px;
+}
+
+/* SET LABEL STYLES ============================================================================= */
+
+label,
+.label {
+  @include rem2px('font-size', 1.2);
+  line-height:12px;
+  display: flex;
+  margin-bottom: 10px;
+  color:rgba($cloudburst, 0.6);
+  text-transform: uppercase;
+  @include tracking(.6);
+}
+
+label abbr,
+.label aabr {
+  color:$carnation;
+}
+
+/* SET VALIDATION STYLES ============================================================================= */
+
+.form__validation-error {
+  @include rem2px('font-size', 1.4);
+  line-height:1.4;
+  position: absolute;
+  bottom: -20px;
+  margin-bottom: 0;
+  color: $carnation;
+}
+
+.form__validation-error--slug {
+  margin-bottom: 20px;
+}
+
+.form__general-error {
+  @include rem2px('font-size', 1.4);
+  line-height:1.4;
+  color: $carnation;
+  margin-bottom: 0;
+}
+
+/* SET ICON STYLES ============================================================================= */
+
+.field__icon {
+  position: absolute;
+  top: 47px;
+  right: 20px;
+  display: flex;
+  pointer-events: none;
+}
+
+/* SET SELECT STYLES ============================================================================= */
+
+.field__icon--select:before,
+.field__icon--select:after {
+  content: '';
+  width: 1px;
+  height: 9px;
+  display: flex;
+  background: $silver;
+  position: relative;
+}
+
+.field__icon--select:before {
+  transform: rotate(-45deg);
+  left: -5px;
+}
+
+.field__icon--select:after {
+  transform: rotate(45deg);
+}
+
+/* SET RADIO STYLES ============================================================================= */
+
+.field--radio {
+  justify-content: center;
+}
+
+.field--radio input[type='radio'] {
+  display: none;
+}
+
+.field--radio label {
+  display: flex;
+  align-items: center;
+  @include rem2px('font-size', 1.4);
+  line-height: 18px;
+  margin-bottom: 0;
+  text-transform: none;
+  color: $cloudburst;
+  @include tracking(0);
+}
+
+.field--radio label:before {
+  content: '';
+  border-radius: 50px;
+  width: 50px;
+  height: 50px;
+  border:1px solid rgba($cloudburst, 1);
+  display: flex;
+  margin-right: 15px;
+  flex-shrink: 0;
+}
+
+.field--radio label:after {
+  position: absolute;
+  content: '';
+  border-radius: 50px;
+  width: 36px;
+  height: 36px;
+  background: $casablanca;
+  transform: scale(0) translateY(-50%);
+  left: 7px;
+  top: 50%;
+  transition: transform 0.3s ease-in-out;
+}
+
+.field--radio input[type='radio']:checked ~ label:after {
+  transform: scale(1) translateY(-50%);
+}
+
+.field--radio-small label:before {
+  width: 20px;
+  height: 20px;
+  border-radius: 20px;
+}
+.field--radio-small label:after {
+  width: 14px;
+  height: 14px;
+  border-radius: 14px;
+  left: 3px;
+}
+
+
+/* SET CHECKBOX STYLES ============================================================================= */
+
+.field--checkbox {
+  justify-content: center;
+}
+
+.field--checkbox input[type='checkbox'] {
+  display: none;
+}
+
+.field--checkbox label {
+  align-items: center;
+  @include rem2px('font-size', 1.4);
+  line-height: 18px;
+  margin-bottom: 0;
+}
+
+.checkbox-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  width: 24px;
+  height: 24px;
+  border:1px solid rgba($cloudburst, 0.3);
+  margin-right: 15px;
+  background: rgba($silver,0);
+}
+
+.field--checkbox input[type='checkbox']:checked ~ label .checkbox-item {
+  background: rgba($silver,1);
+}
+
+.field--checkbox input[type='checkbox']:checked ~ label .checkbox-item svg polyline {
+  stroke-dasharray: 40;
+  stroke-dashoffset: 40;
+  animation-name: dash;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
+  animation-duration: 0.8s;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+  /* SET NOTE STYLES ============================================================================= */
+
+.form__note {
+  position: absolute;
+  @include calc(top, "100% + 12px");
+  @include rem2px('font-size', 1.2);
+  line-height:1.4;
+  margin-bottom: 0;
+}
+.form__validation-error + .form__note {
+  @include calc(top, "100% + 22px");
+}
+
+.select-wrapper {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+
+  @media (max-width: 480px) {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+}
+
+.select-wrapper .field:first-child {
+  @media (max-width: 480px) {
+    margin-left: 0;
+  }
+}
+
+.select-wrapper .field {
+  margin: 0 10px;
+}
+
+.select-wrapper .select {
+  @include rem2px('font-size', 2.8);
+  line-height: 32px;
+  @extend .font--gibson-med;
+}
+
+
+/* SET UPLOAD STYLES ============================================================================= */
+
+input[type="file"] {
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* SET UPLOAD STYLES ============================================================================= */
+
+.field--price:before {
+  content: '£';
+  position: absolute;
+  top: 32px;
+  left: 0;
+  color: $cloudburst;
+  @include rem2px('font-size', 2.0);
+  line-height: 34px;
+}
+
+.field--price input[type="text"] {
+  padding-left: 14px;
+}
+
+.field--split {
+  @include calc(width, "(100% / 2) - 20px");
+  justify-content: flex-end;
+}
+
+.field--split:nth-of-type(odd) {
+  margin-right: 20px;
+}
+
+.field--split:nth-of-type(even) {
+  margin-left: 20px;
+}

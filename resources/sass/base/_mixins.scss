@@ -1,0 +1,292 @@
+$rem-base-font: 16px !default;
+/* SET MIXINS ============================================================================= */
+@mixin calc($property, $expression, $important: false) {
+  @if $important == false {
+    #{$property}: -webkit-calc(#{$expression});
+    #{$property}: calc(#{$expression});
+  }
+  @else if $important == true {
+    #{$property}: -webkit-calc(#{$expression}) !important;
+    #{$property}: calc(#{$expression}) !important;
+  }
+}
+
+// This mixing returns a rem and px value for a given property
+@mixin rem2px($property, $sizeValue: 1.6) {
+  #{$property}: ($sizeValue * 10) + px;
+  #{$property}: $sizeValue + rem;
+}
+
+// This mixing is how we create our column classes for the website, by simply using
+// @include generate-grid(12, 'lg') we get a looped through set of column classes as well as offset classes that can
+// be used on the site they look like the following
+// .col--lg-12-1 and then a offset class will look as follows .col--lg-12-1.col--lg-offset-12-1
+@mixin generate-grid($columns, $size: 's') {
+  @for $i from 1 through $columns {
+    .col--#{$size}-#{$columns}-#{$i} {
+      grid-column: span $i;
+    }
+    @for $z from 1 through $columns {
+      .col--#{$size}-#{$columns}-#{$i}.col--#{$size}-offset-#{$columns}-#{$z} {
+        grid-column: $z / span $i;
+      }
+    }
+  }
+}
+
+@mixin breakpoint($point) {
+  @if $point == desktop-xl {
+    @media (min-width:$desktop-xl-min) {
+      @content;
+    }
+  }
+  @if $point == desktop {
+    @media (max-width: $desktop-max) and (min-width: $desktop-min) {
+      @content;
+    }
+  }
+  @else if $point == tablet {
+    @media (max-width: $tablet-max) and (min-width: $tablet-min) {
+      @content;
+    }
+  }
+  @else if $point == tablet-sm {
+    @media (max-width: $tablet-sm-max) and (min-width: $tablet-sm-min) {
+      @content;
+    }
+  }
+  @else if $point == mobile {
+    @media (max-width: $mobile-max) {
+      @content;
+    }
+  }
+}
+
+@function tracking( $target ){
+  @return ($target / 10) * 1em;
+}
+
+@mixin tracking( $target ){
+  letter-spacing: tracking( $target );
+}
+
+/* SET FONT FAMILIES ============================================================================= */
+
+@mixin gibsonSemi {
+  font-family: canada-type-gibson, sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}
+
+@mixin gibsonReg {
+  font-family: canada-type-gibson, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@mixin gibsonMed {
+  font-family: canada-type-gibson, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
+
+@mixin gibsonBook {
+  font-family: canada-type-gibson, sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+}
+
+@mixin keplerMed {
+  font-family: kepler-std, serif;
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
+
+@mixin keplerSemiBold {
+  font-family: kepler-std, serif;
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}
+
+@mixin keplerBlack {
+  font-family: kepler-std, serif;
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+}
+
+/* SET FONT SIZES ============================================================================= */
+
+@mixin headerOne {
+  @include rem2px('font-size', 10.4);
+  line-height: 112px;
+  margin-top: map-get($siteSpacers, "spacer30");
+  margin-bottom: map-get($siteSpacers, "spacer30");
+  @include breakpoint($desktop) {
+    @include rem2px('font-size', 8.6);
+    line-height: 92px;
+  }
+  @include breakpoint($tablet) {
+    @include rem2px('font-size', 7.2);
+    line-height: 80px;
+  }
+  @include breakpoint($tablet-small) {
+    @include rem2px('font-size', 6.4);
+    line-height: 72px;
+  }
+  @include breakpoint($mobile) {
+    @include rem2px('font-size', 5.2);
+    line-height: 62px;
+  }
+}
+
+@mixin headerTwo {
+  @include rem2px('font-size', 8.6);
+  line-height: 92px;
+
+  @include breakpoint($desktop) {
+    @include rem2px('font-size', 7.2);
+    line-height: 80px;
+  }
+  @include breakpoint($tablet) {
+    @include rem2px('font-size', 6.4);
+    line-height: 72px;
+  }
+  @include breakpoint($tablet-small) {
+    @include rem2px('font-size', 5.2);
+    line-height: 62px;
+  }
+  @include breakpoint($mobile) {
+    @include rem2px('font-size', 4.4);
+    line-height: 52px;
+  }
+}
+
+@mixin headerThree {
+  @include rem2px('font-size', 7.2);
+  line-height: 80px;
+
+  @include breakpoint($desktop) {
+    @include rem2px('font-size', 6.4);
+    line-height: 72px;
+  }
+  @include breakpoint($tablet) {
+    @include rem2px('font-size', 5.2);
+    line-height: 62px;
+  }
+  @include breakpoint($tablet-small) {
+    @include rem2px('font-size', 4.4);
+    line-height: 52px;
+  }
+  @include breakpoint($mobile) {
+    @include rem2px('font-size', 4.0);
+    line-height: 44px;
+  }
+}
+
+@mixin headerFour {
+  @include rem2px('font-size', 6.4);
+  line-height: 72px;
+
+  @include breakpoint($desktop) {
+    @include rem2px('font-size', 5.2);
+    line-height: 62px;
+  }
+  @include breakpoint($tablet) {
+    @include rem2px('font-size', 4.4);
+    line-height: 52px;
+  }
+  @include breakpoint($tablet-small) {
+    @include rem2px('font-size', 4.0);
+    line-height: 44px;
+  }
+  @include breakpoint($mobile) {
+    @include rem2px('font-size', 3.6);
+    line-height: 40px;
+  }
+}
+
+@mixin headerFive {
+  @include rem2px('font-size', 4.4);
+  line-height: 52px;
+
+  @include breakpoint($desktop) {
+    @include rem2px('font-size', 3.6);
+    line-height: 40px;
+  }
+  @include breakpoint($tablet) {
+    @include rem2px('font-size', 3.2);
+    line-height: 36px;
+  }
+  @include breakpoint($tablet-small) {
+    @include rem2px('font-size', 3.2);
+    line-height: 36px;
+  }
+  @include breakpoint($mobile) {
+    @include rem2px('font-size', 2.6);
+    line-height: 28px;
+  }
+}
+
+@mixin dateLarge {
+  @include rem2px('font-size', 2.0);
+  line-height: 26px;
+
+  @media (max-width: $tablet-sm-max) {
+    @include rem2px('font-size', 1.8);
+    line-height: 24px;
+  }
+}
+
+@mixin bodyIntro {
+  @include rem2px('font-size', 2.8);
+  line-height: 40px;
+
+  @include breakpoint($desktop) {
+    @include rem2px('font-size', 2.6);
+    line-height: 36px;
+  }
+  @media (max-width: $tablet-max) {
+    @include rem2px('font-size', 2.4);
+    line-height: 34px;
+  }
+  @include breakpoint($mobile) {
+    @include rem2px('font-size', 2);
+    line-height: 28px;
+  }
+}
+
+@mixin bodyLarge {
+  @include rem2px('font-size', 3.0);
+  line-height: 42px;
+
+  @include breakpoint($desktop) {
+    @include rem2px('font-size', 2.2);
+    line-height: 30px;
+  }
+  @media (max-width: $tablet-max) {
+    @include rem2px('font-size', 2.2);
+    line-height: 30px;
+  }
+}
+
+@mixin bodyMedium {
+  @include rem2px('font-size', 1.8);
+  line-height: 30px;
+
+  @media (max-width: $tablet-sm-max) {
+    @include rem2px('font-size', 1.6);
+    line-height: 28px;
+  }
+}
+
+@mixin bodySmall {
+  @include rem2px('font-size', 1.2);
+  line-height:1.4;
+}

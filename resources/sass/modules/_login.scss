@@ -1,0 +1,16 @@
+.login__form {
+  flex-direction: column;
+}
+
+.login__form form {
+  margin-bottom: 20px;
+}
+
+.login__form form .field--button {
+  margin-top: 0;
+}
+
+.forgotten-password a {
+  text-decoration: underline;
+  color: rgba($cloudburst, 0.5);
+}

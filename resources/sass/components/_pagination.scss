@@ -1,0 +1,14 @@
+.pagination {
+  display: flex;
+  align-items: center;
+}
+.pagination .page-item {
+  margin:0 10px;
+}
+
+.pagination .page-item.active {
+  color:$carnation;
+}
+.pagination .page-item:hover {
+  color:$casablanca;
+}

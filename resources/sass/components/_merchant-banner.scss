@@ -1,0 +1,171 @@
+.merchant-banner {
+  background: $white;
+}
+
+.merchant-banner__details {
+  flex-direction: row;
+}
+
+.merchant-banner__details p {
+  margin-bottom: 8px;
+}
+
+.merchant-banner__tel {
+  margin-bottom: 0;
+}
+
+.merchant-banner__description {
+  margin-top: 42px;
+
+  @media (max-width: $tablet-sm-max) {
+    margin-bottom: 40px;
+  }
+}
+
+.merchant-banner__description p {
+  @include rem2px('font-size', 1.6);
+  line-height: 30px;
+}
+
+.merchant-banner__description p:last-child {
+  margin-bottom: 0;
+}
+
+.ordering {
+  padding-top:0;
+  background:rgba($silver, 0.1);
+}
+
+.merchant-banner__content {
+  flex-direction: column;
+}
+
+.merchant-banner__logo {
+  border-radius: 5px;
+  border: 3px solid rgba($silver, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: $white;
+}
+
+.merchant-banner__logo img {
+  width:100%;
+  max-width: 100%;
+}
+
+.merchant-banner__opening {
+  display: flex;
+  align-items: center;
+}
+
+.merchant-banner__opening input {
+  display: none;
+}
+
+.merchant-banner__opening label {
+  position: relative;
+  @extend .font--gibson-book;
+  @include rem2px('font-size', 3);
+  line-height: 42px;
+  text-transform: none;
+  letter-spacing: 0;
+  color: $cloudburst;
+  margin-bottom: 0;
+  display: flex;
+  align-items: center;
+
+  @media (max-width: $tablet-sm-max) {
+    @include rem2px('font-size', 1.8);
+    line-height: 32px;
+  }
+}
+
+.merchant-banner__opening label .icon {
+  margin: 4px 0 0 20px;
+
+  @media (max-width: $tablet-sm-max) {
+    margin: 0 0 0 10px;
+  }
+}
+
+.merchant-banner__list {
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 260px;
+  display: flex;
+  flex-direction: column;
+  background: $white;
+  border-radius: 5px;
+  border: 1px solid rgba($cloudburst, 0.2);
+  padding: 20px;
+}
+
+.merchant-banner__list span {
+  @extend .font--gibson-med;
+  @include rem2px('font-size', 1.6);
+  line-height: 30px;
+}
+
+.merchant-banner__opening input:checked ~ label .merchant-banner__list {
+  opacity: 1;
+  visibility: visible;
+}
+
+.merchant-banner__opening-status {
+  @extend .font--gibson-med;
+  @include rem2px('font-size', 3);
+  line-height: 42px;
+  color: $cloudburst;
+  display: flex;
+  align-items: center;
+
+  @media (max-width: $tablet-sm-max) {
+    @include rem2px('font-size', 1.8);
+    line-height: 32px;
+  }
+}
+
+.merchant-banner__opening-status:after {
+  content: '';
+  width: 20px;
+  height: 1px;
+  background: $cloudburst;
+  display: flex;
+  margin: 0 20px;
+}
+
+.merchant-banner__list span.opening-times__time {
+  @extend .font--gibson-book;
+}
+
+.merchant-banner__delivery {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.merchant-banner__delivery p {
+  margin-bottom: 30px;
+  @include rem2px('font-size', 1.4);
+  line-height: 26px;
+  display: flex;
+  align-items: center;
+}
+
+.merchant-banner__type {
+  margin-right: 40px;
+}
+
+.merchant-banner__delivery span {
+  margin-right: 10px;
+}
+
+.merchant-banner__delivery p:first-child {
+  margin-right: 40px;
+}

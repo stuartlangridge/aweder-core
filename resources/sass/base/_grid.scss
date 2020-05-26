@@ -1,0 +1,74 @@
+.grid {
+  position: fixed;
+  width:100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: -1;
+}
+
+.grid .row {
+  height: 100%;
+}
+
+.grid__item {
+  position: relative;
+}
+
+.grid__item:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  border-left: 1px dashed rgba($silver, 0.6);
+  left: - map-get($siteGutter, "desktop");
+
+  @include breakpoint($desktop-xl) {
+    left: - map-get($siteGutter, "desktop-xl");
+  }
+  @include breakpoint($tablet) {
+    left: - map-get($siteGutter, "tablet");
+  }
+  @media(max-width: $tablet-sm-max) {
+    left: - map-get($siteGutter, "tablet-sm");
+  }
+}
+
+.grid .grid__item:last-child:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  border-left: 1px dashed $silver;
+  right: - map-get($siteGutter, "desktop");
+
+  @include breakpoint($desktop-xl) {
+    right: - map-get($siteGutter, "desktop-xl");
+  }
+  @include breakpoint($tablet) {
+    right: - map-get($siteGutter, "tablet");
+  }
+}
+
+/* MEDIA QUERIES ============================================================================= */
+
+@media(max-width: $tablet-sm-max) {
+  .grid .grid__item:nth-child(6):after{
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 1px;
+    height: 100%;
+    border-left: 1px dashed rgba($silver, 0.6);
+    right: - map-get($siteGutter, "tablet-sm");
+  }
+
+  .grid .grid__item:nth-child(n+7) {
+    display: none;
+  }
+}

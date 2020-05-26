@@ -1,0 +1,21 @@
+@include generate-grid(12, 'lg');
+
+@media (max-width: $desktop-max) {
+  @include generate-grid(12, 'l');
+}
+
+@media (max-width: $tablet-max) {
+  @include generate-grid(12, 'm');
+}
+
+@media (max-width: $tablet-sm-max) {
+  @include generate-grid(6, 'sm');
+}
+
+@media (max-width: $mobile-max) {
+  @include generate-grid(6, 's');
+}
+
+.col {
+  display: inline-flex;
+}

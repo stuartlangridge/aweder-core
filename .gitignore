@@ -1,0 +1,33 @@
+# OS
+.DS_Store
+
+# IDE
+/.idea
+/.vscode
+/.vagrant
+
+# Tools
+/.php_cs.cache
+/.phpunit.result.cache
+Homestead.json
+Homestead.yaml
+
+# Environment
+.env
+.env.backup
+.env.testing
+
+# Composer
+/vendor
+
+# Node
+/node_modules
+npm-debug.log
+yarn-error.log
+yarn.lock
+
+# Laravel Framework
+
+
+# Application Specific Files
+
